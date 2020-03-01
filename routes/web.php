@@ -22,3 +22,6 @@ Route::get('/delete', 'HomeController@delete')->middleware('can:isAdmin')->name(
 
 
 Route::get('array','ArrayController@index');
+Route::get('pay', 'PayOrderController@store');
+Route::get('channel','ChannelController@index');
+Route::get('post/create','PostController@create');
