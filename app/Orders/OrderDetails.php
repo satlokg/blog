@@ -12,6 +12,7 @@ class OrderDetails
 	public function all($value='')
 	{
 		$this->payment->setDiscount(500);
+		dd($this->payment);
 		return [
 			'name'=>'satlok',
 			'address'=>'18 street',

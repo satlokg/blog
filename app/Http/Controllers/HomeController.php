@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Gate;
 
 class HomeController extends Controller
 {
@@ -30,5 +31,13 @@ class HomeController extends Controller
     public function delete()
     {
         $this->authorize('isAdmin');
+    }
+    public function policy()
+    {
+        if (Gate::allows('isAdmin')) {
+          echo 'Allowed';
+        } else {
+          echo 'Not Allowed';
+        }
     }
 }
